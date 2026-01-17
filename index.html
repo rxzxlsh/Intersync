@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intersync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Futuristic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <h2 class="logo">Intersync</h2>
+    <div class="nav-links">
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('project')">Build a Project</button>
+      <button onclick="showSection('resume')">Build a Resume</button>
+    </div>
+  </nav>
+
+  <!-- HOME -->
+  <section id="home" class="section active">
+    <div class="hero">
+      <h1>Intersync</h1>
+      <p class="slogan">The bridge between your personal and professional identity</p>
+
+      <div class="cta-buttons">
+        <button class="primary" onclick="showSection('project')">Build A Project</button>
+        <button class="secondary" onclick="showSection('resume')">Build A Resume</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUILD A PROJECT -->
+  <section id="project" class="section">
+    <h2>Build a Project</h2>
+    <p class="subtitle">List your interests & hobbies</p>
+
+    <input id="interestInput" type="text" placeholder="AI, finance, fitness, design...">
+    <button class="primary" onclick="generateProjects()">Build</button>
+
+    <div id="projectResults"></div>
+    <div id="mindMap"></div>
+  </section>
+
+  <!-- BUILD A RESUME -->
+  <section id="resume" class="section">
+    <h2>Build a Resume</h2>
+    <p class="subtitle">Neural skill-growth visualization</p>
+
+    <div class="node-container">
+      <div class="node">HTML</div>
+      <div class="node">CSS</div>
+      <div class="node">JavaScript</div>
+      <div class="node">APIs</div>
+      <div class="node">Data</div>
+      <div class="node">AI</div>
+    </div>
+
+    <p class="note">
+      Skills strengthen like neural pathways — the more you build, the smarter the system becomes.
+    </p>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
