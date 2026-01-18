@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Intersync</title>
@@ -77,9 +78,19 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(30px, -40px) scale(1.05); }
-      66% { transform: translate(-20px, 25px) scale(0.95); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      33% {
+        transform: translate(30px, -40px) scale(1.05);
+      }
+
+      66% {
+        transform: translate(-20px, 25px) scale(0.95);
+      }
     }
 
     /* Onboarding */
@@ -103,7 +114,10 @@
     }
 
     @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .screen-hidden {
@@ -143,7 +157,8 @@
       line-height: 1.3;
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       background: rgba(255, 255, 255, 0.05);
       border: 2px solid rgba(255, 255, 255, 0.1);
@@ -156,7 +171,8 @@
       margin-bottom: 2rem;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
       outline: none;
       border-color: #10b981;
       background: rgba(16, 185, 129, 0.1);
@@ -325,8 +341,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .page-header {
@@ -591,6 +614,7 @@
       .sidebar {
         width: 240px;
       }
+
       .main-content {
         margin-left: 240px;
       }
@@ -603,15 +627,18 @@
         position: relative;
         padding: 1rem;
       }
+
       .main-content {
         margin-left: 0;
         padding: 1rem;
       }
+
       .nav-menu {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
       }
+
       .nav-item {
         flex: 1;
         min-width: 140px;
@@ -620,6 +647,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Background Elements -->
   <div class="bg-gradient"></div>
@@ -745,38 +773,38 @@
           <h2 class="sidebar-logo">Intersync</h2>
           <div class="user-info" id="identityLabel"></div>
         </div>
-        
+
         <div class="nav-menu">
           <button class="nav-item active" onclick="showPage('home')">
             <span class="nav-icon"><i class="fas fa-home"></i></span>
             <span>Home</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('projects')">
             <span class="nav-icon"><i class="fas fa-project-diagram"></i></span>
             <span>Project Pathways</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('neuro-map')">
             <span class="nav-icon"><i class="fas fa-brain"></i></span>
             <span>Neuroplasticity Map</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('languages')">
             <span class="nav-icon"><i class="fas fa-code"></i></span>
             <span>Language Roadmap</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('research')">
             <span class="nav-icon"><i class="fas fa-search"></i></span>
             <span>Research Suggestions</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('resume')">
             <span class="nav-icon"><i class="fas fa-file-alt"></i></span>
             <span>Resume Builder</span>
           </button>
-          
+
           <button class="nav-item" onclick="showPage('analytics')">
             <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
             <span>Skill Analytics</span>
@@ -792,11 +820,12 @@
             <h1 class="page-title">Welcome to Intersync</h1>
             <p class="page-subtitle">Your personalized career development platform</p>
           </div>
-          
+
           <div class="welcome-section">
             <h3>Hello, <span id="userName">User</span>!</h3>
-            <p>Your journey from <span id="currentPosition">where you are</span> to <span id="targetPosition">where you want to be</span> starts here.</p>
-            
+            <p>Your journey from <span id="currentPosition">where you are</span> to <span id="targetPosition">where you
+                want to be</span> starts here.</p>
+
             <div class="stats-grid">
               <div class="stat-card">
                 <div class="stat-value" id="skillCount">8</div>
@@ -816,14 +845,15 @@
               </div>
             </div>
           </div>
-          
+
           <div class="dashboard-grid">
             <div class="card">
               <h3><i class="fas fa-bolt card-icon"></i> Quick Actions</h3>
               <p>Update your profile, explore new pathways, or check your progress.</p>
-              <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.875rem;">Update Profile</button>
+              <button class="btn-primary" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.875rem;">Update
+                Profile</button>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-calendar-alt card-icon"></i> Today's Focus</h3>
               <p>Work on Python fundamentals and complete 1 project milestone.</p>
@@ -832,7 +862,7 @@
                 <span class="skill-tag">Daily Goal</span>
               </div>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-trophy card-icon"></i> Recent Achievements</h3>
               <p>Completed skill assessment and identified 5 key areas for growth.</p>
@@ -850,11 +880,12 @@
             <h1 class="page-title">Project Pathways</h1>
             <p class="page-subtitle">Personalized projects to bridge your skill gaps</p>
           </div>
-          
+
           <div class="dashboard-grid">
             <div class="pathway-item">
               <h3>Data Visualization Dashboard</h3>
-              <p>Build an interactive dashboard using Python (Pandas, Plotly) to analyze and visualize real-world datasets.</p>
+              <p>Build an interactive dashboard using Python (Pandas, Plotly) to analyze and visualize real-world
+                datasets.</p>
               <div class="skill-tags">
                 <span class="skill-tag">Python</span>
                 <span class="skill-tag">Data Analysis</span>
@@ -862,10 +893,11 @@
                 <span class="skill-tag">Beginner</span>
               </div>
             </div>
-            
+
             <div class="pathway-item">
               <h3>Full-Stack Web Application</h3>
-              <p>Create a complete web app with React frontend and Node.js backend, implementing user authentication and database integration.</p>
+              <p>Create a complete web app with React frontend and Node.js backend, implementing user authentication and
+                database integration.</p>
               <div class="skill-tags">
                 <span class="skill-tag">JavaScript</span>
                 <span class="skill-tag">React</span>
@@ -873,7 +905,7 @@
                 <span class="skill-tag">Intermediate</span>
               </div>
             </div>
-            
+
             <div class="pathway-item">
               <h3>Machine Learning Model</h3>
               <p>Develop a predictive model using scikit-learn to solve a classification problem with real data.</p>
@@ -893,26 +925,30 @@
             <h1 class="page-title">Neuroplasticity Skill Map</h1>
             <p class="page-subtitle">Visualizing how your skills connect and grow</p>
           </div>
-          
+
           <div class="skill-map-container" id="skillMap">
             <!-- Map will be generated here -->
             <div style="padding: 2rem; text-align: center; color: #94a3b8;">
               <i class="fas fa-brain" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
               <h3>Interactive Skill Network</h3>
-              <p>Your skills are represented as interconnected nodes showing how learning one skill strengthens connections to others.</p>
-              <p style="margin-top: 1rem; font-size: 0.9rem;">Click on skills to see neuroscience insights about skill connections.</p>
+              <p>Your skills are represented as interconnected nodes showing how learning one skill strengthens
+                connections to others.</p>
+              <p style="margin-top: 1rem; font-size: 0.9rem;">Click on skills to see neuroscience insights about skill
+                connections.</p>
             </div>
           </div>
-          
+
           <div class="dashboard-grid">
             <div class="card">
               <h3><i class="fas fa-synapse card-icon"></i> Neuroscience Insight</h3>
-              <p>Your brain creates new neural pathways every time you learn a skill. Consistent practice strengthens these connections, making skills become automatic.</p>
+              <p>Your brain creates new neural pathways every time you learn a skill. Consistent practice strengthens
+                these connections, making skills become automatic.</p>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-link card-icon"></i> Skill Connections</h3>
-              <p>Learning Python enhances problem-solving skills, which transfers to better JavaScript and data analysis abilities through shared cognitive patterns.</p>
+              <p>Learning Python enhances problem-solving skills, which transfers to better JavaScript and data analysis
+                abilities through shared cognitive patterns.</p>
             </div>
           </div>
         </div>
@@ -927,34 +963,41 @@
             <h1 class="page-title">Language & Technology Roadmap</h1>
             <p class="page-subtitle">Market-aligned learning paths based on your goals.</p>
           </div>
-
-          <!-- Controls -->
-          <div class="lr-controls">
-            <div class="lr-field">
-              <label for="techSelect">Choose your stack</label>
-              <select id="techSelect" multiple>
-                <option value="python">Python</option>
-                <option value="javascript">JavaScript</option>
-                <option value="sql">SQL & Databases</option>
-                <option value="java">Java</option>
-                <option value="cloud">Cloud & DevOps</option>
-              </select>
-              <small>Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</small>
+          
+          <div class="dashboard-grid">
+            <div class="card">
+              <h3><i class="fab fa-python card-icon"></i> Python Path</h3>
+              <p><strong>Market Demand:</strong> High (AI/ML, Data Science, Automation)</p>
+              <p><strong>Your Level:</strong> Beginner → Intermediate</p>
+              <p><strong>Next Steps:</strong> Learn Pandas, NumPy, then Django/Flask</p>
+              <div class="skill-tags" style="margin-top: 1rem;">
+                <span class="skill-tag">High Priority</span>
+                <span class="skill-tag">6 month goal</span>
+              </div>
             </div>
-
-            <div class="lr-field">
-              <label for="levelSelect">Your current level</label>
-              <select id="levelSelect">
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-              </select>
+            
+            <div class="card">
+              <h3><i class="fab fa-js card-icon"></i> JavaScript Path</h3>
+              <p><strong>Market Demand:</strong> Very High (Web Development)</p>
+              <p><strong>Your Level:</strong> Foundation → Advanced</p>
+              <p><strong>Next Steps:</strong> Master React, then Node.js/Express</p>
+              <div class="skill-tags" style="margin-top: 1rem;">
+                <span class="skill-tag">Medium Priority</span>
+                <span class="skill-tag">9 month goal</span>
+              </div>
             </div>
-
-            <button class="btn-primary" id="generateRoadmapBtn">Generate Plan</button>
+            
+            <div class="card">
+              <h3><i class="fas fa-database card-icon"></i> SQL & Databases</h3>
+              <p><strong>Market Demand:</strong> High (All tech roles)</p>
+              <p><strong>Your Level:</strong> Beginner</p>
+              <p><strong>Next Steps:</strong> Learn basic queries, then optimization</p>
+              <div class="skill-tags" style="margin-top: 1rem;">
+                <span class="skill-tag">Low Priority</span>
+                <span class="skill-tag">3 month goal</span>
+              </div>
+            </div>
           </div>
-
-          <!-- Generated roadmap cards go here -->
-          <div id="roadmapCards" class="lr-card-grid"></div>
         </div>
 
         
@@ -965,7 +1008,7 @@
             <h1 class="page-title">Research & Learning Suggestions</h1>
             <p class="page-subtitle">Curated resources based on your profile</p>
           </div>
-          
+
           <div class="dashboard-grid">
             <div class="card">
               <h3><i class="fas fa-graduation-cap card-icon"></i> Online Courses</h3>
@@ -976,7 +1019,7 @@
                 <li>Data Structures and Algorithms (MIT OpenCourseWare)</li>
               </ul>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-book card-icon"></i> Recommended Books</h3>
               <ul style="color: #94a3b8; margin-top: 1rem; padding-left: 1.5rem;">
@@ -986,7 +1029,7 @@
                 <li>"Atomic Habits" by James Clear</li>
               </ul>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-newspaper card-icon"></i> Industry Research</h3>
               <ul style="color: #94a3b8; margin-top: 1rem; padding-left: 1.5rem;">
@@ -1005,17 +1048,18 @@
             <h1 class="page-title">AI-Powered Resume Builder</h1>
             <p class="page-subtitle">Tailored to specific job descriptions</p>
           </div>
-          
+
           <div class="dashboard-grid">
             <div class="card">
               <h3><i class="fas fa-bullseye card-icon"></i> Target Job Analysis</h3>
               <p><strong>Job Title:</strong> Junior Full-Stack Developer</p>
               <p><strong>Match Score:</strong> 78%</p>
-              <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin: 1rem 0; overflow: hidden;">
+              <div
+                style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin: 1rem 0; overflow: hidden;">
                 <div style="width: 78%; height: 100%; background: linear-gradient(90deg, #10b981, #f59e0b);"></div>
               </div>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-check-circle card-icon"></i> Your Strengths</h3>
               <ul style="color: #94a3b8; margin-top: 1rem; padding-left: 1.5rem;">
@@ -1025,7 +1069,7 @@
                 <li>Learning agility</li>
               </ul>
             </div>
-            
+
             <div class="card">
               <h3><i class="fas fa-exclamation-circle card-icon"></i> Areas to Highlight</h3>
               <ul style="color: #94a3b8; margin-top: 1rem; padding-left: 1.5rem;">
@@ -1036,103 +1080,369 @@
               </ul>
             </div>
           </div>
-          
-          <div class="card" style="margin-top: 2rem;">
-            <h3>Generated Resume Summary</h3>
-            <p>Passionate developer with strong foundation in JavaScript and Python, seeking Junior Full-Stack Developer position. Experience building web applications and data visualization projects. Quick learner with proven ability to adapt to new technologies and solve complex problems.</p>
-            <button class="btn-primary" style="margin-top: 1rem;">Download Resume</button>
-          </div>
-        </div>
 
-        <!-- Skill Analytics Page -->
-        <div id="analytics-page" class="page">
-          <div class="page-header">
-            <h1 class="page-title">Skill Growth Analytics</h1>
-            <p class="page-subtitle">Track your progress and development</p>
+          <div class="card" style="margin-top: 2rem;">
+            <h3>Generate a Tailored Resume (Gemini)</h3>
+
+            <label style="display:block; margin-top: 1rem; color:#94a3b8;">Target Role</label>
+            <input id="targetRoleInput" type="text" placeholder="e.g., Backend Developer" />
+
+            <label style="display:block; margin-top: 1rem; color:#94a3b8;">Job Description / Posting</label>
+            <textarea id="jobDescriptionInput" placeholder="Paste the job posting here..."></textarea>
+
+            <button id="generateAiResumeBtn" class="btn-primary" style="margin-top: 1rem;">
+              Generate with AI
+            </button>
+
+            <div id="aiResumeStatus" style="margin-top: 1rem; color:#94a3b8;"></div>
+
+            <div id="aiResumeResults" style="display:none; margin-top: 1.5rem;">
+              <h3 style="margin-top: 1.5rem;">ATS Match</h3>
+
+              <div style="display:flex; gap: 1.5rem; flex-wrap: wrap;">
+                <div style="flex:1;">
+                  <h4 style="color:#22c55e;">Matched Keywords</h4>
+                  <ul id="atsMatchedList"></ul>
+                </div>
+
+                <div style="flex:1;">
+                  <h4 style="color:#f97316;">Missing Keywords</h4>
+                  <ul id="atsMissingList"></ul>
+                </div>
+              </div>
+
+              <h3 style="margin-bottom: 0.75rem;">Generated Resume Preview</h3>
+              <div id="resumePreview" style="color:#cbd5e1;"></div>
+
+              <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem;">LaTeX Output</h3>
+              <button id="copyLatexBtn" type="button" class="btn-secondary">
+                Copy LaTeX
+              </button>
+              <button id="downloadLatexBtn" type="button" class="btn-secondary" style="margin-left: 8px;">
+                Download .tex
+              </button>
+
+
+              </button>
+
+              <pre id="latexBox"
+                style="white-space: pre-wrap; background: rgba(0,0,0,0.25); padding: 12px; border-radius: 12px; margin-top: 10px; max-height: 400px; overflow:auto;"></pre>
+            </div>
           </div>
-          
-          <div class="dashboard-grid">
-            <div class="card">
-              <h3><i class="fas fa-chart-bar card-icon"></i> Skill Progression</h3>
-              <p>Your Python skills have grown by 40% over the past 3 months.</p>
-              <div style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin: 1rem 0; overflow: hidden;">
-                <div style="width: 70%; height: 100%; background: #10b981;"></div>
-              </div>
+
+          <!-- Skill Analytics Page -->
+          <div id="analytics-page" class="page">
+            <div class="page-header">
+              <h1 class="page-title">Skill Growth Analytics</h1>
+              <p class="page-subtitle">Track your progress and development</p>
             </div>
-            
-            <div class="card">
-              <h3><i class="fas fa-project-diagram card-icon"></i> Connection Density</h3>
-              <p>Your skills show strong interconnections (24 connections across 8 skills).</p>
-              <div class="skill-tags" style="margin-top: 1rem;">
-                <span class="skill-tag">High Density</span>
-                <span class="skill-tag">Strong Network</span>
+
+            <div class="dashboard-grid">
+              <div class="card">
+                <h3><i class="fas fa-chart-bar card-icon"></i> Skill Progression</h3>
+                <p>Your Python skills have grown by 40% over the past 3 months.</p>
+                <div
+                  style="height: 10px; background: rgba(255,255,255,0.1); border-radius: 5px; margin: 1rem 0; overflow: hidden;">
+                  <div style="width: 70%; height: 100%; background: #10b981;"></div>
+                </div>
               </div>
-            </div>
-            
-            <div class="card">
-              <h3><i class="fas fa-tachometer-alt card-icon"></i> Learning Velocity</h3>
-              <p>You're learning at an accelerated pace - 2.3 skills per month.</p>
-              <div class="skill-tags" style="margin-top: 1rem;">
-                <span class="skill-tag">Fast Learner</span>
-                <span class="skill-tag">Above Average</span>
+
+              <div class="card">
+                <h3><i class="fas fa-project-diagram card-icon"></i> Connection Density</h3>
+                <p>Your skills show strong interconnections (24 connections across 8 skills).</p>
+                <div class="skill-tags" style="margin-top: 1rem;">
+                  <span class="skill-tag">High Density</span>
+                  <span class="skill-tag">Strong Network</span>
+                </div>
+              </div>
+
+              <div class="card">
+                <h3><i class="fas fa-tachometer-alt card-icon"></i> Learning Velocity</h3>
+                <p>You're learning at an accelerated pace - 2.3 skills per month.</p>
+                <div class="skill-tags" style="margin-top: 1rem;">
+                  <span class="skill-tag">Fast Learner</span>
+                  <span class="skill-tag">Above Average</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    let currentScreen = 0;
-    let userData = {};
+    <script>
+      let currentScreen = 0;
+      let userData = {};
+      function parseCommaNewlineList(text) {
+        if (!text) return [];
+        return text
+          .split(/[,|\n]/)
+          .map(s => s.trim())
+          .filter(Boolean);
+      }
 
-    function showScreen(index) {
-      // Hide all screens
-      document.querySelectorAll('.onboard-screen').forEach(screen => {
-        screen.classList.add('screen-hidden');
-      });
-      
-      // Show target screen
-      const targetScreen = document.getElementById(`screen-${index}`);
-      if (targetScreen) {
-        targetScreen.classList.remove('screen-hidden');
-        
-        // Focus input
-        const input = targetScreen.querySelector('input, textarea');
-        if (input) {
-          setTimeout(() => input.focus(), 100);
+      function buildCandidatePayloadFromUserData() {
+        // userData is created in initializeDashboard() :contentReference[oaicite:6]{index=6}
+        const skillsArr = parseCommaNewlineList(userData.skills);
+
+        // Your onboarding "experience" is one big textarea right now.
+        // We'll send it as 1 project so Gemini has something to work with.
+        const expText = (userData.experience || "").trim();
+
+        const projects = expText
+          ? [{
+            name: "Experience Highlights",
+            bullets: parseCommaNewlineList(expText)  // if they used commas/newlines
+          }]
+          : [];
+
+        return {
+          name: userData.name || "",
+          email: "",      // you don't collect email yet
+          links: [],      // you don't collect links yet
+          skills: skillsArr,
+          projects: projects,
+          experience: []  // you don't collect structured experience yet
+        };
+      }
+
+      async function generateAIResume() {
+        const targetRole = document.getElementById("targetRoleInput").value.trim();
+        const jobDescription = document.getElementById("jobDescriptionInput").value.trim();
+
+        const statusEl = document.getElementById("aiResumeStatus");
+        const resultsEl = document.getElementById("aiResumeResults");
+
+        statusEl.textContent = "";
+        resultsEl.style.display = "none";
+
+        if (!targetRole || !jobDescription) {
+          statusEl.textContent = "Please enter a target role and paste a job description.";
+          return;
+        }
+
+        // Make sure user finished onboarding and userData exists
+        if (!userData || !userData.name) {
+          statusEl.textContent = "Please complete onboarding first (name/current/target/etc.).";
+          return;
+        }
+
+        const payload = {
+          target_role: targetRole,
+          job_description: jobDescription,
+          candidate: buildCandidatePayloadFromUserData()
+        };
+
+        statusEl.textContent = "Generating with Gemini…";
+
+        const res = await fetch("http://127.0.0.1:5000/api/ai/resume", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (!data.success) {
+          statusEl.textContent = "Error: " + (data.error || "Unknown error");
+          return;
+        }
+
+        statusEl.textContent = data.used_ai ? "Done (Gemini used)." : "Done (fallback used).";
+
+        renderResumePreview(data.resume_json);
+        renderLatex(data.latex);
+        renderATS(data.resume_json);
+
+
+        resultsEl.style.display = "block";
+      }
+
+      function renderResumePreview(resumeJson) {
+        const el = document.getElementById("resumePreview");
+        const header = resumeJson.header || {};
+        const skills = resumeJson.skills || {};
+        const projects = resumeJson.projects || [];
+        const summary = Array.isArray(resumeJson.summary) ? resumeJson.summary : [resumeJson.summary];
+
+        el.innerHTML = `
+    <div style="margin-bottom: 1rem;">
+      <div style="font-size: 1.25rem; font-weight: 700;">${header.name || ""}</div>
+      <div style="color:#94a3b8;">${resumeJson.headline || ""}</div>
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <h4 style="color:#10b981; margin-bottom: 0.5rem;">Summary</h4>
+      <ul style="padding-left: 1.25rem;">
+        ${summary.filter(Boolean).map(s => `<li>${s}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <h4 style="color:#10b981; margin-bottom: 0.5rem;">Skills</h4>
+      ${Object.entries(skills).map(([k, v]) => `
+        <div><b>${k}:</b> ${(v || []).join(", ")}</div>
+      `).join("")}
+    </div>
+
+    <div style="margin-top: 1rem;">
+      <h4 style="color:#10b981; margin-bottom: 0.5rem;">Projects</h4>
+      ${projects.map(p => `
+        <div style="margin-bottom: 0.75rem;">
+          <b>${p.name || ""}</b>
+          <ul style="padding-left: 1.25rem;">
+            ${(p.bullets || []).map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </div>
+      `).join("")}
+    </div>
+  `;
+      }
+      function renderATS(resumeJson) {
+        const matched = resumeJson.ats_keywords_matched || [];
+        const missing = resumeJson.ats_keywords_missing || [];
+
+        const matchedEl = document.getElementById("atsMatchedList");
+        const missingEl = document.getElementById("atsMissingList");
+
+        matchedEl.innerHTML = matched.length
+          ? matched.map(k => `<li>${k}</li>`).join("")
+          : "<li>None</li>";
+
+        missingEl.innerHTML = missing.length
+          ? missing.map(k => `<li>${k}</li>`).join("")
+          : "<li>None</li>";
+      }
+
+
+      function renderLatex(latex) {
+        document.getElementById("latexBox").textContent = latex || "";
+      }
+
+      async function copyLatexToClipboard() {
+        const latex = document.getElementById("latexBox")?.textContent || "";
+
+        if (!latex.trim()) {
+          alert("LaTeX is empty. Generate the resume first.");
+          return;
+        }
+
+        // Try modern clipboard API first
+        try {
+          await navigator.clipboard.writeText(latex);
+          return true;
+        } catch (err) {
+          // Fallback: hidden textarea + execCommand
+          try {
+            const ta = document.createElement("textarea");
+            ta.value = latex;
+            ta.style.position = "fixed";
+            ta.style.left = "-9999px";
+            ta.style.top = "-9999px";
+            document.body.appendChild(ta);
+            ta.focus();
+            ta.select();
+            const ok = document.execCommand("copy");
+            document.body.removeChild(ta);
+            if (!ok) throw new Error("execCommand copy failed");
+            return true;
+          } catch (err2) {
+            console.error("Copy failed:", err, err2);
+            alert("Copy failed. Try using Download .tex instead.");
+            return false;
+          }
         }
       }
-      
-      currentScreen = index;
-    }
 
-    function nextScreen() {
-      if (currentScreen < 7) {
-        showScreen(currentScreen + 1);
+      function setupCopyLatex() {
+        const btn = document.getElementById("copyLatexBtn");
+        if (!btn) return;
+
+        btn.addEventListener("click", async () => {
+          const ok = await copyLatexToClipboard();
+          if (ok) {
+            const old = btn.textContent;
+            btn.textContent = "Copied!";
+            setTimeout(() => (btn.textContent = old), 1200);
+          }
+        });
       }
-    }
 
-    function prevScreen() {
-      if (currentScreen > 0) {
-        showScreen(currentScreen - 1);
+      function setupDownloadLatex() {
+        const btn = document.getElementById("downloadLatexBtn");
+        if (!btn) return;
+
+        btn.addEventListener("click", () => {
+          const latex = document.getElementById("latexBox")?.textContent || "";
+
+          if (!latex.trim()) {
+            alert("LaTeX is empty. Generate the resume first.");
+            return;
+          }
+
+          const blob = new Blob([latex], { type: "application/x-tex;charset=utf-8" });
+          const url = URL.createObjectURL(blob);
+
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "resume.tex"; // IMPORTANT: .tex not .txt
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+
+          URL.revokeObjectURL(url);
+        });
       }
-    }
 
-    function showPage(pageId) {
-      // Update active nav item
-      document.querySelectorAll('.nav-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      event.currentTarget.classList.add('active');
-      
-      // Show selected page
-      document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-      });
-      document.getElementById(`${pageId}-page`).classList.add('active');
-    }
+
+
+
+      function showScreen(index) {
+        // Hide all screens
+        document.querySelectorAll('.onboard-screen').forEach(screen => {
+          screen.classList.add('screen-hidden');
+        });
+
+        // Show target screen
+        const targetScreen = document.getElementById(`screen-${index}`);
+        if (targetScreen) {
+          targetScreen.classList.remove('screen-hidden');
+
+          // Focus input
+          const input = targetScreen.querySelector('input, textarea');
+          if (input) {
+            setTimeout(() => input.focus(), 100);
+          }
+        }
+
+        currentScreen = index;
+      }
+
+      function nextScreen() {
+        if (currentScreen < 7) {
+          showScreen(currentScreen + 1);
+        }
+      }
+
+      function prevScreen() {
+        if (currentScreen > 0) {
+          showScreen(currentScreen - 1);
+        }
+      }
+
+      function showPage(pageId) {
+        // Update active nav item
+        document.querySelectorAll('.nav-item').forEach(item => {
+          item.classList.remove('active');
+        });
+        event.currentTarget.classList.add('active');
+
+        // Show selected page
+        document.querySelectorAll('.page').forEach(page => {
+          page.classList.remove('active');
+        });
+        document.getElementById(`${pageId}-page`).classList.add('active');
+      }
 
     function initializeDashboard() {
       // Collect user data
@@ -1173,214 +1483,29 @@
       document.getElementById('neuroScore').textContent = skillCount * 3;
     }
 
-    //New code for Language Roadmap
-    // ---- Language Roadmap Logic ----
-
-    const ROADMAP_LIBRARY = {
-      python: {
-        name: "Python Path",
-        demand: "High (AI/ML, Data, Automation)",
-        priority: "high",
-        beginner: {
-          levelLabel: "Beginner → Intermediate",
-          months: 6,
-          milestones: [
-            "Learn syntax, data types & control flow",
-            "Practice functions & modules",
-            "Learn Pandas & NumPy",
-            "Build 1–2 automation or data projects"
-          ]
-        },
-        intermediate: {
-          levelLabel: "Intermediate → Advanced",
-          months: 9,
-          milestones: [
-            "Deepen OOP & packaging",
-            "Work with APIs & async",
-            "Learn Django/Flask/FastAPI",
-            "Contribute to open-source"
-          ]
+      // Enter key to advance (but not in textareas)
+      document.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey && currentScreen > 0 && currentScreen < 7) {
+          const activeElement = document.activeElement;
+          if (activeElement.tagName !== 'TEXTAREA') {
+            nextScreen();
+          }
         }
-      },
-      javascript: {
-        name: "JavaScript Path",
-        demand: "Very High (Web & Full-stack)",
-        priority: "medium",
-        beginner: {
-          levelLabel: "Foundation → Intermediate",
-          months: 9,
-          milestones: [
-            "Understand DOM & ES6+",
-            "Build interactive components",
-            "Learn React",
-            "Deploy a small web app"
-          ]
-        },
-        intermediate: {
-          levelLabel: "Intermediate → Advanced",
-          months: 9,
-          milestones: [
-            "State management & routing",
-            "REST/GraphQL APIs",
-            "Node.js + Express backend",
-            "Add tests & performance"
-          ]
-        }
-      },
-      sql: {
-        name: "SQL & Databases",
-        demand: "High (All Tech Roles)",
-        priority: "low",
-        beginner: {
-          levelLabel: "Beginner → Comfortable",
-          months: 3,
-          milestones: [
-            "Write SELECT queries",
-            "Practice JOINs & GROUP BY",
-            "Work with indexes",
-            "Design a small schema"
-          ]
-        },
-        intermediate: {
-          levelLabel: "Intermediate → Advanced",
-          months: 6,
-          milestones: [
-            "Learn window functions",
-            "Optimize queries",
-            "Understand transactions",
-            "Analytics vs OLTP modeling"
-          ]
-        }
-      }
-    };
-
-    const ROADMAP_STORAGE_KEY = "intersync-progress";
-
-    function loadRoadmapProgress() {
-      const raw = localStorage.getItem(ROADMAP_STORAGE_KEY);
-      return raw ? JSON.parse(raw) : {};
-    }
-
-    function saveRoadmapProgress(progress) {
-      localStorage.setItem(ROADMAP_STORAGE_KEY, JSON.stringify(progress));
-    }
-
-    function roadmapKey(tech, level) {
-      return `${tech}__${level}`;
-    }
-
-    function setupLanguageRoadmap() {
-      const btn = document.getElementById("generateRoadmapBtn");
-      if (!btn) return;
-
-      btn.addEventListener("click", () => {
-        const techSelect = document.getElementById("techSelect");
-        const levelSelect = document.getElementById("levelSelect");
-
-        const selected = Array.from(techSelect.selectedOptions).map(o => o.value);
-        const level = levelSelect.value;
-
-        renderRoadmapCards(selected, level);
       });
 
-      renderRoadmapCards(["python", "javascript", "sql"], "beginner");
-    }
+      document.addEventListener("DOMContentLoaded", () => {
+        const btn = document.getElementById("generateAiResumeBtn");
+        if (btn) btn.addEventListener("click", generateAIResume);
 
-    function renderRoadmapCards(techs, level) {
-      const container = document.getElementById("roadmapCards");
-      const progress = loadRoadmapProgress();
-      container.innerHTML = "";
-
-      techs.forEach(tech => {
-        const config = ROADMAP_LIBRARY[tech];
-        const state = config[level];
-        if (!state) return;
-
-        const key = roadmapKey(tech, level);
-        const completed = new Set(progress[key] || []);
-
-        const total = state.milestones.length;
-        const pct = Math.round((completed.size / total) * 100);
-
-        let html = `
-          <div class="lr-card">
-            <div class="lr-card-header">
-              <div class="lr-card-title">${config.name}</div>
-              <span class="lr-chip">${state.months} month goal</span>
-            </div>
-            <p><strong>Market Demand:</strong> ${config.demand}</p>
-            <p><strong>Your Level:</strong> ${state.levelLabel}</p>
-            <div class="lr-chip-row">
-              <span class="lr-chip ${config.priority}">${
-                config.priority === "high" ? "High Priority" :
-                config.priority === "medium" ? "Medium Priority" :
-                "Low Priority"
-              }</span>
-            </div>
-            <div class="lr-progress-wrap">
-              <div class="lr-progress-label">
-                <span>Progress</span>
-                <span id="pct-${key}">${pct}%</span>
-              </div>
-              <div class="lr-progress-track">
-                <div id="bar-${key}" class="lr-progress-fill" style="width:${pct}%"></div>
-              </div>
-            </div>
-            <div class="lr-milestones">
-              <h4>Milestones</h4>
-        `;
-
-        state.milestones.forEach((m, i) => {
-          html += `
-            <label class="lr-milestone">
-              <input type="checkbox" data-tech="${tech}" data-level="${level}" data-index="${i}" ${completed.has(i) ? "checked" : ""}>
-              <span>${m}</span>
-            </label>`;
-        });
-
-        html += `</div></div>`;
-        container.insertAdjacentHTML("beforeend", html);
+        setupCopyLatex();
+        setupDownloadLatex();
       });
 
-      container.querySelectorAll("input[type=checkbox]").forEach(cb => {
-        cb.addEventListener("change", () => {
-          const tech = cb.dataset.tech;
-          const level = cb.dataset.level;
-          const index = parseInt(cb.dataset.index);
 
-          const key = roadmapKey(tech, level);
-          const progress = loadRoadmapProgress();
-          const arr = new Set(progress[key] || []);
-
-          cb.checked ? arr.add(index) : arr.delete(index);
-
-          progress[key] = Array.from(arr);
-          saveRoadmapProgress(progress);
-
-          const total = ROADMAP_LIBRARY[tech][level].milestones.length;
-          const pct = Math.round((arr.size / total) * 100);
-
-          document.getElementById(`pct-${key}`).textContent = `${pct}%`;
-          document.getElementById(`bar-${key}`).style.width = `${pct}%`;
-        });
-      });
-    }
-
-
-    // Enter key to advance (but not in textareas)
-    document.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter' && !e.shiftKey && currentScreen > 0 && currentScreen < 7) {
-        const activeElement = document.activeElement;
-        if (activeElement.tagName !== 'TEXTAREA') {
-          nextScreen();
-        }
-      }
-    });
 
     // Initialize with screen 0
     showScreen(0);
-    setupLanguageRoadmap();
-
   </script>
 </body>
+
 </html>
