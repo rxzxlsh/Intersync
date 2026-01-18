@@ -451,6 +451,141 @@
       margin-bottom: 2rem;
     }
 
+    /* Language Roadmap */
+
+    .lr-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 30px;
+    }
+
+    .lr-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lr-field label {
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .lr-field select {
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+      min-width: 220px;
+    }
+
+    .lr-field small {
+      font-size: 0.7rem;
+      opacity: 0.6;
+      margin-top: 4px;
+    }
+
+    .lr-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 10px;
+    }
+
+    .lr-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .lr-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .lr-card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .lr-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .lr-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .lr-chip.high { border-color: #22c55e; }
+    .lr-chip.medium { border-color: #facc15; }
+    .lr-chip.low { border-color: #f97316; }
+
+    .lr-progress-wrap {
+      margin-top: 8px;
+    }
+
+    .lr-progress-label {
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      opacity: 0.85;
+    }
+
+    .lr-progress-track {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.7);
+      overflow: hidden;
+      margin-top: 6px;
+    }
+
+    .lr-progress-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #10b981, #f59e0b);
+      transition: width 0.3s ease-out;
+    }
+
+    .lr-milestones {
+      margin-top: 10px;
+    }
+
+    .lr-milestones h4 {
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    .lr-milestone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      margin-bottom: 4px;
+    }
+
+    .lr-milestone input[type="checkbox"] {
+      accent-color: #10b981;
+    }
+
+
+
     /* Mobile */
     @media (max-width: 1024px) {
       .sidebar {
@@ -782,49 +917,48 @@
           </div>
         </div>
 
-        <!-- Language Roadmap Page -->
+
+
+
+
+         <!-- Language Roadmap Page -->
         <div id="languages-page" class="page">
           <div class="page-header">
             <h1 class="page-title">Language & Technology Roadmap</h1>
-            <p class="page-subtitle">Market-aligned learning paths based on your goals</p>
+            <p class="page-subtitle">Market-aligned learning paths based on your goals.</p>
           </div>
-          
-          <div class="dashboard-grid">
-            <div class="card">
-              <h3><i class="fab fa-python card-icon"></i> Python Path</h3>
-              <p><strong>Market Demand:</strong> High (AI/ML, Data Science, Automation)</p>
-              <p><strong>Your Level:</strong> Beginner → Intermediate</p>
-              <p><strong>Next Steps:</strong> Learn Pandas, NumPy, then Django/Flask</p>
-              <div class="skill-tags" style="margin-top: 1rem;">
-                <span class="skill-tag">High Priority</span>
-                <span class="skill-tag">6 month goal</span>
-              </div>
+
+          <!-- Controls -->
+          <div class="lr-controls">
+            <div class="lr-field">
+              <label for="techSelect">Choose your stack</label>
+              <select id="techSelect" multiple>
+                <option value="python">Python</option>
+                <option value="javascript">JavaScript</option>
+                <option value="sql">SQL & Databases</option>
+                <option value="java">Java</option>
+                <option value="cloud">Cloud & DevOps</option>
+              </select>
+              <small>Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</small>
             </div>
-            
-            <div class="card">
-              <h3><i class="fab fa-js card-icon"></i> JavaScript Path</h3>
-              <p><strong>Market Demand:</strong> Very High (Web Development)</p>
-              <p><strong>Your Level:</strong> Foundation → Advanced</p>
-              <p><strong>Next Steps:</strong> Master React, then Node.js/Express</p>
-              <div class="skill-tags" style="margin-top: 1rem;">
-                <span class="skill-tag">Medium Priority</span>
-                <span class="skill-tag">9 month goal</span>
-              </div>
+
+            <div class="lr-field">
+              <label for="levelSelect">Your current level</label>
+              <select id="levelSelect">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+              </select>
             </div>
-            
-            <div class="card">
-              <h3><i class="fas fa-database card-icon"></i> SQL & Databases</h3>
-              <p><strong>Market Demand:</strong> High (All tech roles)</p>
-              <p><strong>Your Level:</strong> Beginner</p>
-              <p><strong>Next Steps:</strong> Learn basic queries, then optimization</p>
-              <div class="skill-tags" style="margin-top: 1rem;">
-                <span class="skill-tag">Low Priority</span>
-                <span class="skill-tag">3 month goal</span>
-              </div>
-            </div>
+
+            <button class="btn-primary" id="generateRoadmapBtn">Generate Plan</button>
           </div>
+
+          <!-- Generated roadmap cards go here -->
+          <div id="roadmapCards" class="lr-card-grid"></div>
         </div>
 
+        
+        
         <!-- Research Suggestions Page -->
         <div id="research-page" class="page">
           <div class="page-header">
@@ -1039,6 +1173,200 @@
       document.getElementById('neuroScore').textContent = skillCount * 3;
     }
 
+    //New code for Language Roadmap
+    // ---- Language Roadmap Logic ----
+
+    const ROADMAP_LIBRARY = {
+      python: {
+        name: "Python Path",
+        demand: "High (AI/ML, Data, Automation)",
+        priority: "high",
+        beginner: {
+          levelLabel: "Beginner → Intermediate",
+          months: 6,
+          milestones: [
+            "Learn syntax, data types & control flow",
+            "Practice functions & modules",
+            "Learn Pandas & NumPy",
+            "Build 1–2 automation or data projects"
+          ]
+        },
+        intermediate: {
+          levelLabel: "Intermediate → Advanced",
+          months: 9,
+          milestones: [
+            "Deepen OOP & packaging",
+            "Work with APIs & async",
+            "Learn Django/Flask/FastAPI",
+            "Contribute to open-source"
+          ]
+        }
+      },
+      javascript: {
+        name: "JavaScript Path",
+        demand: "Very High (Web & Full-stack)",
+        priority: "medium",
+        beginner: {
+          levelLabel: "Foundation → Intermediate",
+          months: 9,
+          milestones: [
+            "Understand DOM & ES6+",
+            "Build interactive components",
+            "Learn React",
+            "Deploy a small web app"
+          ]
+        },
+        intermediate: {
+          levelLabel: "Intermediate → Advanced",
+          months: 9,
+          milestones: [
+            "State management & routing",
+            "REST/GraphQL APIs",
+            "Node.js + Express backend",
+            "Add tests & performance"
+          ]
+        }
+      },
+      sql: {
+        name: "SQL & Databases",
+        demand: "High (All Tech Roles)",
+        priority: "low",
+        beginner: {
+          levelLabel: "Beginner → Comfortable",
+          months: 3,
+          milestones: [
+            "Write SELECT queries",
+            "Practice JOINs & GROUP BY",
+            "Work with indexes",
+            "Design a small schema"
+          ]
+        },
+        intermediate: {
+          levelLabel: "Intermediate → Advanced",
+          months: 6,
+          milestones: [
+            "Learn window functions",
+            "Optimize queries",
+            "Understand transactions",
+            "Analytics vs OLTP modeling"
+          ]
+        }
+      }
+    };
+
+    const ROADMAP_STORAGE_KEY = "intersync-progress";
+
+    function loadRoadmapProgress() {
+      const raw = localStorage.getItem(ROADMAP_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    }
+
+    function saveRoadmapProgress(progress) {
+      localStorage.setItem(ROADMAP_STORAGE_KEY, JSON.stringify(progress));
+    }
+
+    function roadmapKey(tech, level) {
+      return `${tech}__${level}`;
+    }
+
+    function setupLanguageRoadmap() {
+      const btn = document.getElementById("generateRoadmapBtn");
+      if (!btn) return;
+
+      btn.addEventListener("click", () => {
+        const techSelect = document.getElementById("techSelect");
+        const levelSelect = document.getElementById("levelSelect");
+
+        const selected = Array.from(techSelect.selectedOptions).map(o => o.value);
+        const level = levelSelect.value;
+
+        renderRoadmapCards(selected, level);
+      });
+
+      renderRoadmapCards(["python", "javascript", "sql"], "beginner");
+    }
+
+    function renderRoadmapCards(techs, level) {
+      const container = document.getElementById("roadmapCards");
+      const progress = loadRoadmapProgress();
+      container.innerHTML = "";
+
+      techs.forEach(tech => {
+        const config = ROADMAP_LIBRARY[tech];
+        const state = config[level];
+        if (!state) return;
+
+        const key = roadmapKey(tech, level);
+        const completed = new Set(progress[key] || []);
+
+        const total = state.milestones.length;
+        const pct = Math.round((completed.size / total) * 100);
+
+        let html = `
+          <div class="lr-card">
+            <div class="lr-card-header">
+              <div class="lr-card-title">${config.name}</div>
+              <span class="lr-chip">${state.months} month goal</span>
+            </div>
+            <p><strong>Market Demand:</strong> ${config.demand}</p>
+            <p><strong>Your Level:</strong> ${state.levelLabel}</p>
+            <div class="lr-chip-row">
+              <span class="lr-chip ${config.priority}">${
+                config.priority === "high" ? "High Priority" :
+                config.priority === "medium" ? "Medium Priority" :
+                "Low Priority"
+              }</span>
+            </div>
+            <div class="lr-progress-wrap">
+              <div class="lr-progress-label">
+                <span>Progress</span>
+                <span id="pct-${key}">${pct}%</span>
+              </div>
+              <div class="lr-progress-track">
+                <div id="bar-${key}" class="lr-progress-fill" style="width:${pct}%"></div>
+              </div>
+            </div>
+            <div class="lr-milestones">
+              <h4>Milestones</h4>
+        `;
+
+        state.milestones.forEach((m, i) => {
+          html += `
+            <label class="lr-milestone">
+              <input type="checkbox" data-tech="${tech}" data-level="${level}" data-index="${i}" ${completed.has(i) ? "checked" : ""}>
+              <span>${m}</span>
+            </label>`;
+        });
+
+        html += `</div></div>`;
+        container.insertAdjacentHTML("beforeend", html);
+      });
+
+      container.querySelectorAll("input[type=checkbox]").forEach(cb => {
+        cb.addEventListener("change", () => {
+          const tech = cb.dataset.tech;
+          const level = cb.dataset.level;
+          const index = parseInt(cb.dataset.index);
+
+          const key = roadmapKey(tech, level);
+          const progress = loadRoadmapProgress();
+          const arr = new Set(progress[key] || []);
+
+          cb.checked ? arr.add(index) : arr.delete(index);
+
+          progress[key] = Array.from(arr);
+          saveRoadmapProgress(progress);
+
+          const total = ROADMAP_LIBRARY[tech][level].milestones.length;
+          const pct = Math.round((arr.size / total) * 100);
+
+          document.getElementById(`pct-${key}`).textContent = `${pct}%`;
+          document.getElementById(`bar-${key}`).style.width = `${pct}%`;
+        });
+      });
+    }
+
+
     // Enter key to advance (but not in textareas)
     document.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' && !e.shiftKey && currentScreen > 0 && currentScreen < 7) {
@@ -1051,6 +1379,8 @@
 
     // Initialize with screen 0
     showScreen(0);
+    setupLanguageRoadmap();
+
   </script>
 </body>
 </html>
