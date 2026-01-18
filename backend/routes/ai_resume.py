@@ -1,18 +1,17 @@
 # backend/routes/ai_resume.py
 
+import os
 from flask import Blueprint, request, jsonify, make_response
+
 from backend.services.ai_tailor_gemini import tailor_resume_with_gemini
 from backend.services.latex_render import resume_json_to_latex
 
 ai_resume_bp = Blueprint("ai_resume", __name__)
 
+
 def build_gemini_payload(target_role: str, job_description: str, candidate: dict) -> dict:
-    """
-    Build a consistent payload for Gemini so both JSON + .tex routes behave the same.
-    """
     return {
         "instructions": [
-            # Step 5 prompt improvements
             "You are an expert resume writer, ATS optimizer, and technical recruiter.",
             "ONLY use the provided candidate data. DO NOT invent companies, roles, degrees, dates, or technologies.",
             "Tailor the resume to the target role and the job description.",
@@ -38,6 +37,29 @@ def build_gemini_payload(target_role: str, job_description: str, candidate: dict
         }
     }
 
+
+def build_demo_resume(target_role: str, candidate: dict) -> dict:
+    """Deterministic fallback: always works even without GEMINI_API_KEY."""
+    return {
+        "header": {
+            "name": candidate.get("name", "Candidate Name"),
+            "email": candidate.get("email", ""),
+            "links": candidate.get("links", []) if isinstance(candidate.get("links", []), list) else []
+        },
+        "headline": target_role,
+        "summary": [
+            f"{target_role} candidate with hands-on project experience and strong fundamentals."
+        ],
+        "skills": {
+            "Technical Skills": candidate.get("skills", []) if isinstance(candidate.get("skills", []), list) else []
+        },
+        "projects": candidate.get("projects", []) if isinstance(candidate.get("projects", []), list) else [],
+        "experience": candidate.get("experience", []) if isinstance(candidate.get("experience", []), list) else [],
+        "ats_keywords_matched": [],
+        "ats_keywords_missing": []
+    }
+
+
 @ai_resume_bp.route("/api/ai/resume", methods=["POST"])
 def ai_resume():
     data = request.json or {}
@@ -52,34 +74,51 @@ def ai_resume():
             "error": "Missing target_role, job_description, or candidate"
         }), 400
 
+    # ✅ Demo fallback toggle
+    ai_enabled = os.getenv("AI_ENABLED", "true").lower() == "true"
+
+    # If no key, auto-disable AI (so teammates don't crash)
+    if not os.getenv("GEMINI_API_KEY"):
+        ai_enabled = False
+
+    if not ai_enabled:
+        resume_json = build_demo_resume(target_role, candidate)
+        latex = resume_json_to_latex(resume_json)
+        return jsonify({
+            "success": True,
+            "used_ai": False,
+            "resume_json": resume_json,
+            "latex": latex
+        })
+
+    # AI path
     payload = build_gemini_payload(target_role, job_description, candidate)
 
     try:
         resume_json = tailor_resume_with_gemini(payload)
-
-        # ✅ This is what your website needs for copy/download
         latex = resume_json_to_latex(resume_json)
-
         return jsonify({
             "success": True,
             "used_ai": True,
             "resume_json": resume_json,
             "latex": latex
         })
-
     except Exception as e:
+        # If AI fails, fallback instead of breaking demo
+        resume_json = build_demo_resume(target_role, candidate)
+        latex = resume_json_to_latex(resume_json)
         return jsonify({
-            "success": False,
+            "success": True,
             "used_ai": False,
-            "error": str(e)
-        }), 500
+            "warning": "Gemini failed; fallback used.",
+            "error": str(e),
+            "resume_json": resume_json,
+            "latex": latex
+        })
+
 
 @ai_resume_bp.route("/api/ai/resume.tex", methods=["POST"])
 def ai_resume_tex():
-    """
-    Returns a downloadable .tex file.
-    Frontend can call this OR just download from the latex returned by /api/ai/resume.
-    """
     data = request.json or {}
 
     target_role = (data.get("target_role") or "").strip()
@@ -92,10 +131,17 @@ def ai_resume_tex():
             "error": "Missing target_role, job_description, or candidate"
         }), 400
 
-    payload = build_gemini_payload(target_role, job_description, candidate)
+    ai_enabled = os.getenv("AI_ENABLED", "true").lower() == "true"
+    if not os.getenv("GEMINI_API_KEY"):
+        ai_enabled = False
 
     try:
-        resume_json = tailor_resume_with_gemini(payload)
+        if ai_enabled:
+            payload = build_gemini_payload(target_role, job_description, candidate)
+            resume_json = tailor_resume_with_gemini(payload)
+        else:
+            resume_json = build_demo_resume(target_role, candidate)
+
         latex = resume_json_to_latex(resume_json)
 
         response = make_response(latex)
